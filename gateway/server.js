@@ -18,6 +18,7 @@ app.get('/api/test', (req, res) => {
 
 // ==========================
 // AUTH ROUTES
+// API Gateway for Auth Service
 // ==========================
 
 // REGISTER
