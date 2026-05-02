@@ -119,7 +119,7 @@ node server.js
 ## 🔑 Contoh Data Login
 
 ```text
-email: rakha@test.com
+email: rakha2@test.com
 password: 123456
 ```
 
