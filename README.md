@@ -136,6 +136,8 @@ Tersedia pada folder:
 project-root/
 │
 ├── gateway/
+│   ├── server.js
+│   ├── package.json
 ├── services/
 │   └── auth-service/
 │   └── book-service/
