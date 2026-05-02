@@ -126,7 +126,7 @@ Tersedia pada folder:
 
 ## 🎥 Demo Video
 
-(Link akan ditambahkan)
+to be announced
 
 ---
 
