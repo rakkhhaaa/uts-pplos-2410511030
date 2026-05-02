@@ -9,6 +9,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
+    // Handle user registration
     public function register(Request $request)
     {
         $user = User::create([
