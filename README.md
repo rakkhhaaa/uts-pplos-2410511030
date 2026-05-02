@@ -1,47 +1,80 @@
-# 🔐 UTS PPLOS A - Auth Service (JWT Laravel)
+Siap, aku ubahin README kamu supaya **jelas ada API Gateway + microservice lengkap** dan tetap rapi buat nilai 👍
+
+---
+
+# ✅ VERSI README (SUDAH DENGAN GATEWAY)
+
+Tinggal copy–paste aja:
+
+---
+
+# 🔐 UTS PPLOS A - Sistem Auth dengan API Gateway (JWT Laravel)
 
 ## 👤 Identitas
 
 * **Nama**: Rakha Aqilatha Farid
 * **NIM**: 2410511030
-* **Kelas**: A Informatika
+* **Kelas**: Informatika (A)
 
 ---
 
 ## 📌 Deskripsi Project
 
-Project ini merupakan **REST API Authentication Service** menggunakan Laravel dengan implementasi **JSON Web Token (JWT)**.
+Project ini merupakan implementasi **arsitektur microservice** dengan **API Gateway** sebagai pintu utama komunikasi client.
 
-Service ini berfungsi untuk:
+Sistem terdiri dari:
+
+* **API Gateway (Node.js)** → menerima semua request dari client
+* **Auth Service (Laravel)** → menangani autentikasi menggunakan JWT
+
+Fitur utama:
 
 * Registrasi user
-* Login dan generate token
-* Validasi user menggunakan token
+* Login & generate token
+* Validasi user (protected route)
 * Refresh token
-* Logout user
+* Logout
 
 ---
 
 ## 🧱 Arsitektur Sistem
 
-Project menggunakan konsep **microservice**, dimana:
+Sistem menggunakan konsep **API Gateway + Microservices**:
 
-* Auth Service sebagai service utama autentikasi
-* Menggunakan JWT sebagai sistem keamanan
-* Endpoint dilindungi menggunakan middleware `auth:api`
+* Client mengakses API melalui Gateway
+* Gateway meneruskan request ke Auth Service
+* Auth Service memproses autentikasi menggunakan JWT
 
 ---
 
 ## ⚙️ Teknologi yang Digunakan
 
-* Laravel
+* Node.js (API Gateway)
+* Laravel (Auth Service)
 * JWT (`tymon/jwt-auth`)
-* MySQL
+* MySQL / SQLite
 * Postman (testing API)
 
 ---
 
-## 🔗 Endpoint API
+## 🌐 Struktur Service & Port
+
+| Service      | Port | Keterangan          |
+| ------------ | ---- | ------------------- |
+| API Gateway  | 8000 | Entry point client  |
+| Auth Service | 8001 | Service autentikasi |
+
+---
+
+## 🔗 Endpoint API (Melalui Gateway)
+
+Semua request dilakukan melalui:
+
+```text
+http://127.0.0.1:8000/api
+```
+
+---
 
 ### 🔐 Auth
 
@@ -60,12 +93,25 @@ Project menggunakan konsep **microservice**, dimana:
 
 ## 🚀 Cara Menjalankan Project
 
+### 1️⃣ Jalankan Auth Service
+
 ```bash
+cd services/auth-service
 composer install
 cp .env.example .env
 php artisan key:generate
 php artisan jwt:secret
 php artisan serve --port=8001
+```
+
+---
+
+### 2️⃣ Jalankan API Gateway
+
+```bash
+cd gateway
+npm install
+node server.js
 ```
 
 ---
@@ -81,19 +127,19 @@ password: 123456
 
 ## 📢 Catatan
 
-* Server berjalan di:
+* Gateway berjalan di:
 
 ```text
-http://127.0.0.1:8001
+http://127.0.0.1:8000
 ```
 
-* Semua endpoint API diawali dengan:
+* Semua request client HARUS melalui gateway
+
+* Endpoint `/me`, `/logout`, dan `/refresh` membutuhkan:
 
 ```text
-/api
+Authorization: Bearer TOKEN
 ```
-
-* Endpoint `/me`, `/logout`, dan `/refresh` membutuhkan token (Bearer)
 
 ---
 
@@ -111,6 +157,7 @@ Berisi:
 * login
 * me
 * refresh
+* logout
 
 ---
 
@@ -126,7 +173,7 @@ Tersedia pada folder:
 
 ## 🎥 Demo Video
 
-to be announced
+(to be announced)
 
 ---
 
@@ -138,10 +185,9 @@ project-root/
 ├── gateway/
 │   ├── server.js
 │   ├── package.json
+│
 ├── services/
 │   └── auth-service/
-│   └── book-service/
-│   └── transaction-service/
 │
 ├── docs/
 ├── postman/
@@ -152,6 +198,8 @@ project-root/
 
 ## ✅ Status
 
+✔ API Gateway berjalan
+✔ Auth Service berjalan
 ✔ Register berhasil
 ✔ Login menghasilkan JWT token
 ✔ Endpoint protected berjalan
@@ -162,4 +210,6 @@ project-root/
 
 ## 📌 Penutup
 
-Project ini dibuat untuk memenuhi tugas **UTS PPLOS** dengan implementasi autentikasi berbasis JWT menggunakan Laravel.
+Project ini dibuat untuk memenuhi tugas **UTS PPLOS** dengan implementasi **arsitektur microservice menggunakan API Gateway dan autentikasi JWT berbasis Laravel**.
+
+---
