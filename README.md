@@ -170,7 +170,7 @@ Tersedia pada folder:
 ## 📂 Struktur Project
 
 ```text
-project-root/
+UTS-PPLOS-A-2410511030/
 │
 ├── gateway/
 │   ├── server.js
@@ -178,9 +178,20 @@ project-root/
 │
 ├── services/
 │   └── auth-service/
+│   └── book-service/
+│   └── transaction-service/
 │
 ├── docs/
+│   └── Diagram-Arsitektur.png/
+│   └── Laporan-UTS-PPLOS-2410511030.pdf/
 ├── postman/
+│   └── collection.json/
+│   └── login.png/
+│   └── logout.png/
+│   └── me.png/
+│   └── refresh.png/
+│   └── register.png/
+│   └──test.png/
 ├── README.md
 ```
 
