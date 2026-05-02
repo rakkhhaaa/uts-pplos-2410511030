@@ -135,8 +135,11 @@ Tersedia pada folder:
 ```text
 project-root/
 │
+├── gateway/
 ├── services/
 │   └── auth-service/
+│   └── book-service/
+│   └── transaction-service/
 │
 ├── docs/
 ├── postman/
