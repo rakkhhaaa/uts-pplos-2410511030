@@ -163,7 +163,7 @@ Tersedia pada folder:
 
 ## 🎥 Demo Video
 
-(to be announced)
+https://youtu.be/s3h49RJzIEc?si=HNvH4E_TpfadKX1h
 
 ---
 
