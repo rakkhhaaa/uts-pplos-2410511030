@@ -1,13 +1,3 @@
-Siap, aku ubahin README kamu supaya **jelas ada API Gateway + microservice lengkap** dan tetap rapi buat nilai 👍
-
----
-
-# ✅ VERSI README (SUDAH DENGAN GATEWAY)
-
-Tinggal copy–paste aja:
-
----
-
 # 🔐 UTS PPLOS A - Sistem Auth dengan API Gateway (JWT Laravel)
 
 ## 👤 Identitas
